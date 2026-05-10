@@ -1,0 +1,15 @@
+# Node modules (if any)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# Logs
+*.log
+
+# serve package files
+package-lock.json

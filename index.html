@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finance Tracker — Sign In</title>
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+
+  <div class="auth-wrapper">
+
+    <!-- LEFT PANEL — branding -->
+    <div class="auth-left">
+      <div class="brand-content">
+        <div class="brand-logo">💰</div>
+        <h1>Finance Tracker</h1>
+        <p>Take control of your money. Track expenses, monitor income, and build better habits — all in one place.</p>
+
+        <div class="brand-stats">
+          <div class="brand-stat">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Free to use</span>
+          </div>
+          <div class="brand-stat">
+            <span class="stat-number">🔒</span>
+            <span class="stat-label">Secured by Firebase</span>
+          </div>
+          <div class="brand-stat">
+            <span class="stat-number">☁️</span>
+            <span class="stat-label">Cloud synced</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT PANEL — auth forms -->
+    <div class="auth-right">
+      <div class="auth-card">
+
+        <!-- TAB SWITCHER -->
+        <div class="auth-tabs">
+          <button class="auth-tab active" id="tab-login" type="button">Log In</button>
+          <button class="auth-tab"        id="tab-signup" type="button">Sign Up</button>
+        </div>
+
+        <!-- ERROR BANNER -->
+        <div class="auth-error" id="auth-error" style="display:none;">
+          <span class="error-icon">⚠️</span>
+          <span id="error-message"></span>
+        </div>
+
+        <!-- SUCCESS BANNER -->
+        <div class="auth-success" id="auth-success" style="display:none;">
+          <span>✅</span>
+          <span id="success-message"></span>
+        </div>
+
+        <!-- ── LOGIN FORM ── -->
+        <form class="auth-form" id="login-form">
+          <div class="form-heading">
+            <h2>Welcome back</h2>
+            <p>Sign in to your account</p>
+          </div>
+
+          <div class="field-group">
+            <label for="login-email">Email address</label>
+            <div class="input-wrapper">
+              <span class="input-icon">✉️</span>
+              <input
+                type="email"
+                id="login-email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="field-group">
+            <div class="label-row">
+              <label for="login-password">Password</label>
+            </div>
+            <div class="input-wrapper">
+              <span class="input-icon">🔑</span>
+              <input
+                type="password"
+                id="login-password"
+                placeholder="Your password"
+                autocomplete="current-password"
+                required
+              />
+              <button type="button" class="toggle-password" data-target="login-password">👁</button>
+            </div>
+          </div>
+
+          <button type="submit" class="auth-btn" id="login-btn">
+            <span class="btn-text">Log In</span>
+            <span class="btn-loader" style="display:none;">
+              <span class="loader-dot"></span>
+              <span class="loader-dot"></span>
+              <span class="loader-dot"></span>
+            </span>
+          </button>
+
+          <p class="form-footer">
+            Don't have an account?
+            <button type="button" class="link-btn" id="switch-to-signup">Sign up free</button>
+          </p>
+        </form>
+
+        <!-- ── SIGNUP FORM ── -->
+        <form class="auth-form" id="signup-form" style="display:none;">
+          <div class="form-heading">
+            <h2>Create account</h2>
+            <p>Start tracking your finances today</p>
+          </div>
+
+          <div class="field-group">
+            <label for="signup-name">Full name</label>
+            <div class="input-wrapper">
+              <span class="input-icon">👤</span>
+              <input
+                type="text"
+                id="signup-name"
+                placeholder="Ada Obi"
+                autocomplete="name"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- USERNAME FIELD -->
+          <div class="field-group">
+            <label for="signup-username">Username</label>
+            <div class="input-wrapper">
+              <span class="input-icon" style="font-weight:700;color:#94a3b8;">@</span>
+              <input
+                type="text"
+                id="signup-username"
+                placeholder="ada_obi"
+                autocomplete="off"
+                autocorrect="off"
+                autocapitalize="off"
+                spellcheck="false"
+                required
+              />
+            </div>
+            <span class="username-feedback" id="username-feedback"></span>
+          </div>
+
+          <div class="field-group">
+            <label for="signup-email">Email address</label>
+            <div class="input-wrapper">
+              <span class="input-icon">✉️</span>
+              <input
+                type="email"
+                id="signup-email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="signup-password">Password</label>
+            <div class="input-wrapper">
+              <span class="input-icon">🔑</span>
+              <input
+                type="password"
+                id="signup-password"
+                placeholder="At least 6 characters"
+                autocomplete="new-password"
+                required
+              />
+              <button type="button" class="toggle-password" data-target="signup-password">👁</button>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="signup-confirm">Confirm password</label>
+            <div class="input-wrapper">
+              <span class="input-icon">🔒</span>
+              <input
+                type="password"
+                id="signup-confirm"
+                placeholder="Repeat your password"
+                autocomplete="new-password"
+                required
+              />
+            </div>
+          </div>
+
+          <button type="submit" class="auth-btn" id="signup-btn">
+            <span class="btn-text">Create Account</span>
+            <span class="btn-loader" style="display:none;">
+              <span class="loader-dot"></span>
+              <span class="loader-dot"></span>
+              <span class="loader-dot"></span>
+            </span>
+          </button>
+
+          <p class="form-footer">
+            Already have an account?
+            <button type="button" class="link-btn" id="switch-to-login">Log in</button>
+          </p>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>
